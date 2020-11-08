@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ departure }}</title>
+</head>
+<body>
+    <h1>Туры по направлению {{ departure }}:</h1>{% for tour_id, tour_data in tours.items() %}
+    <p>{{ tour_data.country }}: <a href="{{ url_for('tours_element', tour_id=tour_id) }}">
+        {{ tour_data.title }} {{ tour_data.price }} {{ tour_data.stars }}* </a></p>
+    {% endfor %}
+</body>
+</html>
